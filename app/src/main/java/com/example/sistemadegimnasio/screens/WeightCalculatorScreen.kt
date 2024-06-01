@@ -39,9 +39,8 @@ import com.example.sistemadegimnasio.viewModel.PesoException
 
 
 import com.example.sistemadegimnasio.viewModel.WeightCalculatorViewModel
-import java.math.BigDecimal
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun WeightCalculatorScreen(navController: NavController, viewModel: WeightCalculatorViewModel) {
     var pesoDeseado by remember { mutableStateOf("") }
@@ -49,26 +48,7 @@ fun WeightCalculatorScreen(navController: NavController, viewModel: WeightCalcul
     val context = LocalContext.current
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Purple40,
-                    titleContentColor = Color.White
-
-                ),
-
-                title = { Text("Calculadora de Peso") },
-                navigationIcon = {
-                    IconButton(onClick = { navController.navigateUp() }) {
-                        Icon(
-                            Icons.Filled.ArrowBack,
-                            contentDescription = "Atrás",
-                            tint = Color.White
-                        )
-                    }
-                }
-            )
-        }
+        topBar = { TopBar(navController, "Calculadora de Peso") }
     ) { innerPadding ->
         Column(
             modifier = Modifier

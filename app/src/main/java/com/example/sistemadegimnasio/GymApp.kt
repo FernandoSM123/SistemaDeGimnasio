@@ -34,13 +34,13 @@ sealed class Screen(val route: String) {
 
 
 @Composable
-fun GymApp(startDestination: String = Screen.Login.route) {
+fun GymApp(startDestination: String, context: Context) {
     val navController = rememberNavController()
 
     NavHost(navController, startDestination = startDestination) {
 
         //LOGIN
-        composable(Screen.Login.route) { LoginScreen(navController, LoginViewModel()) }
+        composable(Screen.Login.route) { LoginScreen(navController, LoginViewModel(context)) }
 
         //VENTANA PRINCIPAL
         composable(Screen.Main.route) { MainScreen(navController) }
@@ -52,7 +52,7 @@ fun GymApp(startDestination: String = Screen.Login.route) {
         composable(Screen.PersonalRecords.route) {
             PersonalRecordsScreen(
                 navController,
-                PersonalRecordsViewModel()
+                PersonalRecordsViewModel(context)
             )
         }
 
