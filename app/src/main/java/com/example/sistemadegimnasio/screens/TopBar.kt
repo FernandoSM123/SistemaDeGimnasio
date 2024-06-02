@@ -10,8 +10,12 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.sistemadegimnasio.ui.theme.Purple40
+
+
+val TopAppBarHeight = 60.dp
 
 //TOPBAR
 @OptIn(ExperimentalMaterial3Api::class)

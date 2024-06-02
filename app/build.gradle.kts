@@ -88,4 +88,8 @@ dependencies {
 
     implementation ("androidx.activity:activity-compose:1.4.0")
     implementation ("androidx.compose.material3:material3:1.0.0-alpha01")
+
+    //calendar
+    implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
+    implementation("com.maxkeppeler.sheets-compose-dialogs:calendar:1.2.0")
 }

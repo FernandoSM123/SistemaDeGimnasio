@@ -31,8 +31,6 @@ import com.example.sistemadegimnasio.models.PersonalRecord
 
 import com.example.sistemadegimnasio.viewModel.PersonalRecordsViewModel
 
-val TopAppBarHeight = 56.dp
-
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun PersonalRecordsScreen(navController: NavController, viewModel: PersonalRecordsViewModel) {
@@ -81,7 +79,7 @@ fun PersonalRecordItem(record: PersonalRecord, onClick: () -> Unit) {
             .padding(vertical = 8.dp)
             .clickable { onClick() }
     ) {
-        Text(text = record.exerciseName, style = MaterialTheme.typography.titleLarge)
+        Text(text = record.exerciseName, style = MaterialTheme.typography.titleMedium)
         Text(text = "Peso Maximo: ${record.maxWeight}", style = MaterialTheme.typography.bodyLarge)
     }
 }

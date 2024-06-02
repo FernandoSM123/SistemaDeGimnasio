@@ -1,18 +1,10 @@
 package com.example.sistemadegimnasio
 
-import android.app.Application
 import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHost
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.sistemadegimnasio.dao.AppDatabase
 
 import com.example.sistemadegimnasio.screens.LoginScreen
 import com.example.sistemadegimnasio.screens.MainScreen
@@ -22,7 +14,7 @@ import com.example.sistemadegimnasio.screens.WorkoutsScreen
 import com.example.sistemadegimnasio.viewModel.LoginViewModel
 import com.example.sistemadegimnasio.viewModel.PersonalRecordsViewModel
 import com.example.sistemadegimnasio.viewModel.WeightCalculatorViewModel
-import com.example.sistemadegimnasio.viewModel.WorkoutViewModel
+import com.example.sistemadegimnasio.viewModel.TrainingViewModel
 
 sealed class Screen(val route: String) {
     object Login : Screen("login")
@@ -46,7 +38,7 @@ fun GymApp(startDestination: String, context: Context) {
         composable(Screen.Main.route) { MainScreen(navController) }
 
         //ENTRENAMIENTOS
-        composable(Screen.Workouts.route) { WorkoutsScreen(navController, WorkoutViewModel()) }
+        composable(Screen.Workouts.route) { WorkoutsScreen(navController, TrainingViewModel(context)) }
 
         //RECORDS PERSONALES
         composable(Screen.PersonalRecords.route) {

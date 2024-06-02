@@ -42,7 +42,17 @@ class MainActivity : ComponentActivity() {
         Exercise(name = "Russian Twist"),
         Exercise(name = "Hanging Leg Raise"),
         Exercise(name = "Cable Crossover"),
-        Exercise(name = "Romanian Deadlift")
+        Exercise(name = "Romanian Deadlift"),
+        Exercise(name = "Lat Pulldown"),
+        Exercise(name = "Incline Bench Press"),
+        Exercise(name = "Seated Row"),
+        Exercise(name = "Face Pull"),
+        Exercise(name = "Hip Thrust"),
+        Exercise(name = "Mountain Climber"),
+        Exercise(name = "Bulgarian Split Squat"),
+        Exercise(name = "Leg Curl"),
+        Exercise(name = "Farmer's Walk"),
+        Exercise(name = "Hammer Curl")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
