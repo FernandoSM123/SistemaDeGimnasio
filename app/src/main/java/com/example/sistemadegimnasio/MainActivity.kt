@@ -55,6 +55,19 @@ class MainActivity : ComponentActivity() {
         Exercise(name = "Hammer Curl")
     )
 
+    val users = listOf(
+        User(email = "johnDoe@gmail.com", password = "123"),
+        User(email = "janeDoe@gmail.com", password = "123"),
+        User(email = "aliceSmith@gmail.com", password = "123"),
+        User(email = "bobBrown@gmail.com", password = "123"),
+        User(email = "charlieDavis@gmail.com", password = "123"),
+        User(email = "dianaEvans@gmail.com", password = "123"),
+        User(email = "edwardFrank@gmail.com", password = "123"),
+        User(email = "fionaGreen@gmail.com", password = "123"),
+        User(email = "georgeHill@gmail.com", password = "123"),
+        User(email = "hannahIvy@gmail.com", password = "123")
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -72,7 +85,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //GymApp(DB_connection)
-                    GymApp(Screen.Login.route,applicationContext)
+                    GymApp(Screen.Login.route, applicationContext)
                 }
             }
         }
@@ -80,10 +93,9 @@ class MainActivity : ComponentActivity() {
 
     //GENERAR DATOS DE PRUEBA
     fun initData() {
-        val u1 = User(email = "johnDoe@gmail.com", password = "123")
-        val u2 = User(email = "janeDoe@gmail.com", password = "123")
-        this.userDao.insertUser(u1)
-        this.userDao.insertUser(u2)
+        for (user in users) {
+            this.userDao.insertUser(user)
+        }
 
         for (exercise in exercises) {
             this.exerciseDao.insertExercise(exercise)
